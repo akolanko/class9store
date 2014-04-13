@@ -1,0 +1,16 @@
+<%= image_tag("/clothing#{@product.id}.jpg", :class => "productimg") %>
+
+<h3><%= @product.name %></h3>
+Price: $<%= @product.price/100 %>.00
+<br><br>
+Availability:
+<span class="color">
+	<% if @product.inventory <=0 %>
+		Out of Stock
+	<% else %>
+		In Stock
+	<% end%>
+</span>
+<br>
+<button class="purchase">Purchase</button>
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	  <title>Aleksandra Kolanko</title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="header">
+			<h1><a class="headlink" href="/">
+				Aleksandra Kolanko
+			</a></h1>
+		</div>
+		<div id="navbar">
+			<ul id="nav">
+				<li>
+					<%= link_to "Shop", categories_path %>
+				</li>
+				<% if @current_user %>
+					<li>
+						<%= link_to "Sign Out", signout_path, method: :delete %>
+					</li>
+				<% else %>
+					<li>
+						<%= link_to "Sign In", signin_path %>
+					</li>
+					<li>
+						<%= link_to "Sign Up", new_user_path %>
+					</li>
+				<% end %>
+				<li>
+					<%= link_to "Sign Out", signout_path, method: :delete %>
+				</li>
+			</ul>
+		</div>
+		<div id="container">
+			<%if flash[:notice] %>
+				<%=flash[:notice] %>
+			<% end %>
+			<%if flash[:alert] %>
+				<%=flash[:alert] %>
+			<% end %>
+			<%= yield %>
+		</div>
+	</body>
+</html>

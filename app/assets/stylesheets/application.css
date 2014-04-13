@@ -1,0 +1,202 @@
+body{
+	font-family: "Sackers Gothic Std", sans-serif;
+	font-size: 14px;
+	letter-spacing: .2em;
+	text-transform: lowercase;
+}
+
+#container{
+	width: 800px;
+	margin: 0 auto;
+	padding: 130px 0 0 0;
+}
+
+#header{
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+#navbar{
+	width: 100%;
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	top: 75px;
+	left: 0;
+}
+
+.clear{
+	clear: both;
+	height: 1px;
+}
+
+a:link{
+	text-decoration: none;
+	color: #000000;
+}
+
+a:visited{
+	color: #000000;
+}
+
+a:hover{
+	color: #a8a8a8;
+}
+
+ul#nav{
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+ul#nav li{
+	display: inline;
+	padding: 40px;
+}
+
+ul#nav li a:link{
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+}
+
+ul#nav li a:visited{
+	color: #000000;
+}
+
+ul#nav li a:hover{
+	color: #a8a8a8;
+}
+
+a.headlink:link{
+	color: #a9c9b7;
+}
+
+a.headlink:visited{
+	color: #a9c9b7;
+}
+
+h1{
+	font-size: 2.1em;
+	letter-spacing: .2em;
+}
+
+h2{
+	font-size: 1.5em;
+}
+
+h3{
+	font-size: 1.3em;
+}
+
+h4{
+	font-size: 1.1em;
+}
+
+.color{
+	color: #a9c9b7;
+}
+
+.center{
+	text-align: center;
+}
+
+img.homeimg{
+	margin: 20px 150px;
+	width: 500px;
+}
+
+.formdiv{
+	line-height: 150%;
+}
+
+input[type="text"]{
+   font-family: inherit;
+   font-size: inherit;
+   color: #8e8e8e;
+}
+
+input[type="password"]{
+   font-family: inherit;
+   font-size: inherit;
+   color: #8e8e8e;	
+}
+
+.submit{
+	font-size: .9em;
+	font-family: inherit;
+	text-transform: lowercase;
+	background-color: #ffffff;
+	border: 1px solid #a8a8a8;
+	letter-spacing: .2em;
+	margin: 10px 0;
+}
+
+input.submit:hover{
+	cursor: pointer;
+	color: #a8a8a8;
+	border-right: 2px solid #a8a8a8;
+	border-bottom: 2px solid #a8a8a8;
+	border-left: 1px solid #a8a8a8;
+	border-top: 1px solid #a8a8a8;
+}
+
+button.purchase{
+	font-size: .9em;
+	font-family: inherit;
+	text-transform: lowercase;
+	background-color: #ffffff;
+	border: 1px solid #a8a8a8;
+	letter-spacing: .2em;
+	margin: 20px 0 0 0;
+}
+
+button.purchase:hover{
+	cursor: pointer;
+	color: #a8a8a8;
+	border-right: 2px solid #a8a8a8;
+	border-bottom: 2px solid #a8a8a8;
+	border-left: 1px solid #a8a8a8;
+	border-top: 1px solid #a8a8a8;
+}
+
+ul.errormessages{
+	list-style: none;
+}
+
+ul.errormessages li{
+	color: #a9c9b7;
+}
+
+img.productimg{
+	width: 800px;
+	margin: 0;
+	padding: 0;
+}
+
+.thumb{
+	width: 500px;
+}
+
+/*
+#e2ebeb
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
