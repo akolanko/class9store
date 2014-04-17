@@ -1,0 +1,20 @@
+<% if current_user && current_user.id == @user.id %>
+
+	<h3>Confirm Add Product to Order</h3>
+
+	<%= @product.name %>
+
+	<br><br>
+
+	<div class="formdiv">
+		<%=form_for [@user, @product, @orderproduct] do |f| %>
+			<%= f.label :quantity, "Quantity" %>
+			<br>
+			<%= f.text_field :quantity %>
+			<br>
+			<%= f.submit "Confirm Add Product", :class => "submit" %>
+		<% end %>
+	</div>
+
+<% end %>
+

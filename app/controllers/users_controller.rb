@@ -24,12 +24,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
     @user = User.where(id: params[:id]).first
     if @user && @user.destroy

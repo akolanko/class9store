@@ -1,0 +1,18 @@
+<% if current_user && current_user.id == @user.id %>
+
+	<h2>Order Payment</h2>
+
+	<div class="formdiv">
+		<%=form_for [@user, @order] do |f| %>
+			<%= f.label :card_id, "Credit Card Id" %>
+			<br>
+			<%= f.text_field :card_id %>
+			<br>
+			<%= f.submit "Place Order", :class => "submit" %>
+		<% end %>
+	</div>
+
+	<br><br>
+	<%= link_to "[Look up My Credit Card IDs]", user_cards_path(@user.id), :class => "colorlink" %>
+	
+<% if current_user && current_user.id == @user.id %>

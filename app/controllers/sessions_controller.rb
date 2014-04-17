@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	user = User.find_by_email(params[:email])
-  	if user && user.authenticate(params[:password])
-  		session[:user_id] = user.id
-  		redirect_to root_path, :notice => "Welcome back #{user.fname}!"
+  	@user = User.find_by_email(params[:email])
+  	if @user && @user.authenticate(params[:password])
+  		session[:user_id] = @user.id
+  		redirect_to root_path, :notice => "Welcome back #{@user.fname}!"
   	else
   		flash[:alert] = "There was a problem signing you in."
   		render "new"

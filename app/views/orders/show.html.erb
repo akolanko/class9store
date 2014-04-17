@@ -1,0 +1,11 @@
+<% if current_user && @order.user_id == current_user.id %>
+
+	<h2>Order #<%= @order.id %></h2>
+
+	<% @products.each do |product| %>
+		<%= product.name %>
+	<% end %>
+	<br><br>
+	<%= link_to "[All My Orders]", user_orders_path(current_user.id), :class => "colorlink" %>
+
+<% end %>

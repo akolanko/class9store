@@ -5,12 +5,14 @@
 
 			<%= link_to(image_tag("/clothing#{product.id}.jpg", :class => "thumb"), category_product_path(@category.id, product.id)) %>
 
+			<br>
+			
 		<% end %>
 	<% else %>
 		There are currently no products of this type.
-	<% end %>
-	<% if current_user && current_user.admin == true %>
-		<br><br>
-		<%= link_to "[Add a Product]", new_category_product_path(@category.id) %>
+		<% if current_user.admin == true %>
+			<br><br>
+			<%= link_to "[Add a Product]", new_category_product_path(@category.id) %>
+		<% end %>
 	<% end %>
 </div>

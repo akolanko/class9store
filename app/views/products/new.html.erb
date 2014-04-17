@@ -1,2 +1,33 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<% if current_user && current_user.admin == true %>
+
+	<h3>Add a Product to <%= link_to @category.name, category_path(params[:category_id]), :class => "colorlink" %></h3>
+
+	<% if @product.errors.full_messages.any? %>
+		<ul class="errormessages">
+			<% @product.errors.full_messages.each do |error| %>
+				<li>
+					<%= error %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="formdiv">
+		<%= form_for [@category, @product] do |f| %>
+			<%= f.label :name, "Name" %>
+			<br>
+			<%= f.text_field :name %>
+			<br>
+			<%= f.label :price, "Price" %>
+			<br>
+			<%= f.text_field :price %>
+			<br>
+			<%= f.label :inventory, "Amount in Stock" %>
+			<br>
+			<%= f.text_field :inventory %>
+			<br>
+			<%= f.submit "Submit", :class => "submit" %>
+		<% end %>
+	</div>
+
+<% end %>

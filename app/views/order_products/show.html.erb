@@ -1,0 +1,7 @@
+<% if current_user && current_user.id == @user.id %>
+
+	<h2>Order <span class="color">#<%= @order.id %></span></h2>
+	<br>
+	<%= @product.name %>
+
+<% end %>

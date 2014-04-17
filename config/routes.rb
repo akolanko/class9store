@@ -1,7 +1,12 @@
 Class9store::Application.routes.draw do
 
   root to: "home#index"
-  resources :users
+  resources :users do
+   resources :orders
+   resources :cards do
+    resources :addresses
+   end
+  end
 
   get "/signin" => "sessions#new", as: :signin
   post "/signin" => "sessions#create", as: :new_session
@@ -10,6 +15,13 @@ Class9store::Application.routes.draw do
   resources :categories do
     resources :products
   end
+
+  get "/products" => "products#all", as: :products
+
+  get "/users/:user_id/products/:product_id/order_products/new" => "order_products#new", as: :new_user_product_order_products
+  post "/users/:user_id/products/:product_id/order_products" => "order_products#create"
+  get "/users/:user_id/products/:product_id/order_products/:id" => "order_products#show", as: :user_product_order_product
+  get "/users/:user_id/products/:product_id/order_products" => "order_products#index", as: :user_product_order_products
 
 
   # The priority is based upon order of creation: first created -> highest priority.

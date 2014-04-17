@@ -1,0 +1,15 @@
+<% if current_user && current_user.id == params[:user_id] %>
+
+	<h2>Place Order</h2>
+
+	<div class="formdiv">
+		<%=form_for [@user, @order] do |f| %>
+			<%= f.label :card_id, "Credit Card Id" %>
+			<br>
+			<%= f.text_field :card_id %>
+			<br>
+			<%= f.submit "Place Order", :class => "submit" %>
+		<% end %>
+	</div>
+
+<% end %>

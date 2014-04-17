@@ -1,7 +1,14 @@
 <h2><%= @user.fname %>'s Page</h2>
 <h4>Email: <%=@user.email%></h4>
+<% if current_user.admin == true %>
+	<h4>Admin: true</h4>
+<% end %>
 
-<% if @user == @current_user %>
+<% if @user == current_user %>
+	<br>
+	<%= link_to "[My Orders]", user_orders_path(current_user.id), :class => "colorlink" %>
 	<br><br>
-	<%= link_to "[Delete My Account]", user_path(current_user.id), method: :delete, confirm: "Are you sure you want to delete your account?" %>
+	<%= link_to "[My Credit Cards]", user_cards_path(@user.id), :class => "colorlink" %>
+	<br><br>
+	<%= link_to "[Delete My Account]", user_path(current_user.id), method: :delete, confirm: "Are you sure you want to delete your account?", :class => "colorlink" %>
 <% end %>

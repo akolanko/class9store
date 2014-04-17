@@ -1,0 +1,49 @@
+<% if current_user && current_user.id == @user.id %>
+
+	<h2>Enter Billing Address for <%= @card.name %> Card</h2>
+
+	<% if @address.errors.full_messages.any? %>
+		<ul class="errormessages">
+			<% @address.errors.full_messages.each do |error| %>
+				<li>
+					<%= error %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="formdiv">
+		<%=form_for [@user, @card, @address] do |f| %>
+			<%= f.label :fname, "First Name" %>
+			<br>
+			<%= f.text_field :fname %>
+			<br>
+			<%= f.label :lname, "Last Name" %>
+			<br>
+			<%= f.text_field :lname %>
+			<br>
+			<%= f.label :street, "Street" %>
+			<br>
+			<%= f.text_field :street %>
+			<br>
+			<%= f.label :city, "City" %>
+			<br>
+			<%= f.text_field :city %>
+			<br>
+			<%= f.label :state, "State" %>
+			<br>
+			<%= f.text_field :state %>
+			<br>
+			<%= f.label :zip, "Zip Code" %>
+			<br>
+			<%= f.text_field :zip %>
+			<br>
+			<%= f.label :country, "Country" %>
+			<br>
+			<%= f.text_field :country %>
+			<br>
+			<%= f.submit "Add Card", :class => "submit" %>
+		<% end %>
+	</div>
+
+<% end %>

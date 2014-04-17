@@ -1,0 +1,33 @@
+<% if current_user && current_user.id == @user.id %>
+
+	<h2>My Credit Cards</h2>
+	<% if current_user.cards.first %>
+		<% @cards.each do |card| %>
+			<%= card.name %> Card
+			<br>
+			<span class="color">Id:</span> <%= card.id %>
+			<% if card.address %>
+				<br>
+				<span class="color">Billing Address:</span>
+					<br>
+					<% @address = card.address %>
+					<%= @address.fname%> <%= @address.lname %>
+					<br>
+					<%= @address.street %>
+					<br>
+					<%= @address.city %>, <%= @address.state %> <%= @address.zip %>
+					<br>
+					<%= @address.country %>
+			<% else %>
+				<br>
+				<%= link_to "[Add Billing Address]", new_user_card_address_path(@user.id, card.id) %>
+			<% end %>
+			<br><br>
+		<% end %>
+	<% else %>
+		You do not currently have any cards saved.
+	<% end %>
+	<br><br>
+	<%= link_to "[Add a New Card]", new_user_card_path(@user.id), :class => "colorlink" %>
+
+<% end %>

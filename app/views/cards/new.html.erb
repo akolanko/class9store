@@ -1,0 +1,37 @@
+<% if current_user && current_user.id == @user.id %>
+
+	<h2>New Credit Card</h2>
+
+	<% if @card.errors.full_messages.any? %>
+		<ul class="errormessages">
+			<% @card.errors.full_messages.each do |error| %>
+				<li>
+					<%= error %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="formdiv">
+		<%=form_for [@user, @card] do |f| %>
+			<%= f.label :name, "Type" %>
+			<br>
+			<%= f.text_field :name %>
+			<br>
+			<%= f.label :number, "Number" %>
+			<br>
+			<%= f.text_field :number %>
+			<br>
+			<%= f.label :expiration, "Expiration Date" %>
+			<br>
+			<%= f.text_field :expiration %>
+			<br>
+			<%= f.label :security, "Security Code" %>
+			<br>
+			<%= f.text_field :security %>
+			<br>
+			<%= f.submit "Add Card", :class => "submit" %>
+		<% end %>
+	</div>
+
+<% end %>

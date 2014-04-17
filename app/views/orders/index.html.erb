@@ -1,0 +1,11 @@
+<% if current_user %>
+	<h2>All My Orders</h2>
+	<% if current_user.orders.first %>
+		<% @orders.each do |order| %>
+			#<%= link_to order.id, user_order_path(@user.id, order.id) %>
+			<br>
+		<% end %>
+	<% else %>
+	You have not purchased anything yet.
+	<% end %>
+<% end %>
