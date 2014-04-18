@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
   end
 
   def update
-    @order = Order.where(id: params[:id])
+    @order = Order.where(id: params[:id]).first
     if @order.update_attributes(order_params)
       flash[:notice] = "Your order was submitted sucessfully."
       redirect_to root_path
